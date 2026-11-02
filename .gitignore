@@ -1,0 +1,32 @@
+# Data: raw and processed files stay local (GitHub rejects files over 100 MB).
+# Rebuild processed files by running scripts/01_ to 04_ in order (see CLAUDE.md).
+data/
+*.csv
+*.parquet
+
+# Figures and exports from notebooks (re-create by running the notebook)
+figures/
+outputs/
+*.png
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# DuckDB
+*.duckdb
+*.duckdb.wal
+.tmp/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
