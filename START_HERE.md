@@ -23,8 +23,8 @@ python scripts/04_build_model_table.py
 
 ## 3. Where to put data
 Put the two raw files in `data/`:
-- `data/combined_data_final.csv` (trips, ~5.3 GB)
-- `data/open-meteo-40.74N74.04W51m.csv` (weather)
+- `data/taxi.csv` (trips, ~5.3 GB)
+- `data/weather.csv` (weather)
 
 The scripts write to `data/processed/`. Never edit the raw files. `data/` is not in git (too big for GitHub), so get the raw files from the team.
 

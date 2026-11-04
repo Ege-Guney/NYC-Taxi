@@ -5,7 +5,7 @@ Usage:
     python scripts/01_clean_weather.py --precip rain          # keep rain instead of precipitation
     python scripts/01_clean_weather.py --precip both          # keep both
 
-Reads data/open-meteo-40.74N74.04W51m.csv (never modified).
+Reads data/weather.csv (never modified).
 Writes data/processed/weather_hourly.parquet.
 Every cut and correction is documented in docs/corrections.md (Weather section).
 """
@@ -16,7 +16,7 @@ import duckdb
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "open-meteo-40.74N74.04W51m.csv"
+RAW = ROOT / "data" / "weather.csv"
 OUT = ROOT / "data" / "processed" / "weather_hourly.parquet"
 
 # apparent_temperature: near-duplicate of temperature_2m.

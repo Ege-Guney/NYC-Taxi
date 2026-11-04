@@ -4,6 +4,9 @@ data/
 *.csv
 *.parquet
 
+# Course documents (shared outside git)
+MMA860 Project Proposal.docx
+
 # Figures and exports from notebooks (re-create by running the notebook)
 figures/
 outputs/

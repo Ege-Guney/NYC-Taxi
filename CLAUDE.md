@@ -4,8 +4,8 @@
 
 | File | Details |
 |---|---|
-| `data/combined_data_final.csv` | ~5.3 GB merged CSV of 2025 yellow taxi trips (Jan 1 to Dec 31). Columns: `VendorID, tpep_pickup_datetime, tpep_dropoff_datetime, passenger_count, trip_distance, RatecodeID, store_and_fwd_flag, PULocationID, DOLocationID, payment_type, fare_amount, extra, mta_tax, tip_amount, tolls_amount, improvement_surcharge, total_amount, congestion_surcharge, Airport_fee, cbd_congestion_fee`. Full row count not yet checked. |
-| `data/open-meteo-40.74N74.04W51m.csv` | Open-Meteo hourly weather, downloaded with `timezone=America/New_York`. 3 metadata lines before the header (`skiprows=3`). Columns: `temperature_2m, precipitation, rain, snowfall, snow_depth, is_day, apparent_temperature, sunshine_duration, cloud_cover, shortwave_radiation` (units in the header names). `cloud_cover` and `shortwave_radiation` were added in a re-download so we can measure darkness and brightness. The file has no sun-elevation column; calculate it from lat/lon/time if needed (e.g. `pvlib`). 8,760 rows, no missing hours, no nulls. |
+| `data/taxi.csv` | ~5.3 GB merged CSV of 2025 yellow taxi trips (Jan 1 to Dec 31). Columns: `VendorID, tpep_pickup_datetime, tpep_dropoff_datetime, passenger_count, trip_distance, RatecodeID, store_and_fwd_flag, PULocationID, DOLocationID, payment_type, fare_amount, extra, mta_tax, tip_amount, tolls_amount, improvement_surcharge, total_amount, congestion_surcharge, Airport_fee, cbd_congestion_fee`. 48,722,602 rows. |
+| `data/weather.csv` | Open-Meteo hourly weather, downloaded with `timezone=America/New_York`. 3 metadata lines before the header (`skiprows=3`). Columns: `temperature_2m, precipitation, rain, snowfall, snow_depth, is_day, apparent_temperature, sunshine_duration, cloud_cover, shortwave_radiation` (units in the header names). `cloud_cover` and `shortwave_radiation` were added in a re-download so we can measure darkness and brightness. The file has no sun-elevation column; calculate it from lat/lon/time if needed (e.g. `pvlib`). 8,760 rows, no missing hours, no nulls. |
 
 ## Data rules
 

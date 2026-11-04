@@ -3,7 +3,7 @@
 Usage:
     python scripts/02_clean_taxi.py
 
-Reads data/combined_data_final.csv (never modified).
+Reads data/taxi.csv (never modified).
 Writes data/processed/taxi_clean.parquet          (kept trips, kept columns)
        data/processed/taxi_cleaning_report.csv    (rows flagged and removed by each rule)
 Every removed column and row rule is documented in docs/corrections.md (Taxi section).
@@ -14,7 +14,7 @@ from pathlib import Path
 import duckdb
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "combined_data_final.csv"
+RAW = ROOT / "data" / "taxi.csv"
 OUT = ROOT / "data" / "processed" / "taxi_clean.parquet"
 REPORT = ROOT / "data" / "processed" / "taxi_cleaning_report.csv"
 EXPECTED_ROWS = 48_722_602  # TLC total for Jan-Dec 2025 (from the proposal)

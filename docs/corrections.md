@@ -4,8 +4,8 @@ Every column and row cut from the raw data, with the reason. The raw files in `d
 
 | Script | Input | Output |
 |---|---|---|
-| `scripts/01_clean_weather.py` | `data/open-meteo-40.74N74.04W51m.csv` | `data/processed/weather_hourly.parquet` |
-| `scripts/02_clean_taxi.py` | `data/combined_data_final.csv` | `data/processed/taxi_clean.parquet`, `data/processed/taxi_cleaning_report.csv` |
+| `scripts/01_clean_weather.py` | `data/weather.csv` | `data/processed/weather_hourly.parquet` |
+| `scripts/02_clean_taxi.py` | `data/taxi.csv` | `data/processed/taxi_clean.parquet`, `data/processed/taxi_cleaning_report.csv` |
 
 ---
 
