@@ -29,13 +29,13 @@ def write_synthetic_sources(root):
         "cloud_cover (%)": rng.uniform(0, 100, 8760),
         "shortwave_radiation (W/m²)": rng.uniform(0, 600, 8760),
     })
-    path = data / "open-meteo-40.74N74.04W51m.csv"
+    path = data / "weather.csv"
     with path.open("w", encoding="utf-8", newline="") as handle:
         handle.write("latitude,longitude,elevation,utc_offset_seconds,timezone\n")
         handle.write("40.74,-74.04,51,-18000,GMT-5\n\n")
         wx.to_csv(handle, index=False)
     hours = fixed_hours[fixed_hours != pd.Timestamp("2025-03-09 02:00")]
-    with (data / "combined_data_final.csv").open("w", newline="") as handle:
+    with (data / "taxi.csv").open("w", newline="") as handle:
         writer = csv.writer(handle)
         writer.writerow(RAW_COLUMNS)
         for hour in hours:
@@ -83,7 +83,7 @@ def test_restart_and_run_all_on_synthetic_sources(tmp_path):
     _, _, cached_audit = module.run_pipeline(cfg)
     assert checkpoint.stat().st_mtime_ns == original_mtime
     # Appending an exact duplicate changes signature/raw count but cannot increase pickups.
-    raw = tmp_path / "data/combined_data_final.csv"
+    raw = tmp_path / "data/taxi.csv"
     with raw.open("rb") as handle:
         handle.readline()
         duplicate = handle.readline()

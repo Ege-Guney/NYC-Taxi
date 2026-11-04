@@ -133,8 +133,8 @@ def cleaned_taxi(api, tmp_path_factory):
 
 def test_connection_uses_a_persistent_database_and_configured_resources(api, tmp_path):
     cfg = api.Config(root=tmp_path, memory_limit="256MB", threads=2)
-    assert cfg.raw_taxi == tmp_path / "data" / "combined_data_final.csv"
-    assert cfg.raw_weather == tmp_path / "data" / "open-meteo-40.74N74.04W51m.csv"
+    assert cfg.raw_taxi == tmp_path / "data" / "taxi.csv"
+    assert cfg.raw_weather == tmp_path / "data" / "weather.csv"
     con = api.connect(cfg)
     try:
         database_files = [row[2] for row in con.execute("PRAGMA database_list").fetchall()]

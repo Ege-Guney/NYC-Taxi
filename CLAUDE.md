@@ -6,7 +6,7 @@
 
 ## Data and scale
 
-- Never modify raw inputs. Default paths are `data/combined_data_final.csv` and `data/open-meteo-40.74N74.04W51m.csv`.
+- Never modify raw inputs. Default paths are `data/taxi.csv` and `data/weather.csv`.
 - Process trips with DuckDB SQL. Do not materialize the full trip file or a dense zone-panel design matrix in pandas.
 - Parse the strictly typed 20-column trip CSV once into a file-backed staging table. Assign each row its first failed rule and compute sequential removal counts from that stage. Deduplicate exactly across all 20 original columns; a hash alone is not an identity check.
 - Aggregate to zone-hour before pandas conversion. Build the complete 263-zone clock-hour grid so zero-pickup hours remain explicit.

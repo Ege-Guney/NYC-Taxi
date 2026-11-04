@@ -2,8 +2,8 @@
 
 1. Install the dependencies as shown in [README.md](README.md).
 2. Obtain the two raw files from the team. They are local inputs, not tracked in Git:
-   - `data/combined_data_final.csv`
-   - `data/open-meteo-40.74N74.04W51m.csv`
+   - `data/taxi.csv`
+   - `data/weather.csv`
 3. Open **[notebooks/nyc_taxi_analysis.ipynb](notebooks/nyc_taxi_analysis.ipynb)**. Check the configuration cell: project root, input path properties, DuckDB memory/thread limits and `rebuild` option. This workflow expects 2025 inputs. Set `NYC_TAXI_ROOT` if launching outside the repository or `notebooks/` directory.
 4. Restart the kernel and run all cells. The notebook builds or reuses its hourly cache, then runs the entire analysis.
 5. Review the cleaning report and sample checks before using the exported figures and tables in `outputs/`. Record the selected forecast model and its held-out test metrics from this run.

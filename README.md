@@ -15,8 +15,8 @@ python -m notebook notebooks/nyc_taxi_analysis.ipynb
 
 On Windows, create the environment with `py -m venv .venv` and activate with `.venv\Scripts\activate`. Use Python 3.11 or newer. Put the raw inputs at these default paths, or change the notebook's configuration cell:
 
-- `data/combined_data_final.csv`: the original 20-column 2025 yellow-taxi trip CSV.
-- `data/open-meteo-40.74N74.04W51m.csv`: hourly weather with three metadata lines before its header.
+- `data/taxi.csv`: the original 20-column 2025 yellow-taxi trip CSV.
+- `data/weather.csv`: hourly weather with three metadata lines before its header.
 
 Restart the kernel and run all cells. The raw files are never overwritten. Processed Parquet files, the disk-backed DuckDB working database and its spill directory live under `data/processed/`; report tables and figures go under `outputs/`. Generated data and outputs stay out of Git.
 
