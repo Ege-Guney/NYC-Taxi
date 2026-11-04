@@ -59,6 +59,14 @@ Install dependencies with `pip install -r requirements.txt`, then run `nbstripou
 
 `scripts/DONT USE_cleaning.ipynb` is the earlier notebook version of step 1, now replaced by `01_clean_weather.py`.
 
+## Modeling phase (`docs/modeling/`, `notebooks/`)
+
+- `docs/modeling/README.md` is the entry point: order of work, decisions made and still open, conventions, and expected row counts.
+- There's one guide per technique (`docs/modeling/00_` to `08_`) and a matching notebook skeleton (`notebooks/00_` to `08_`). `docs/modeling/report_plan.md` holds the Word report outline and the figure/table register (IDs F01–F18, T01–T18).
+- `notebooks/00_prepare_data.ipynb` builds `data/processed/model_sample.parquet` (top 50 zones, calendar columns, `split`, baselines) and `city_hourly.parquet`. Every later notebook reads those, never the raw CSVs.
+- No VIF for collinearity: the professor doesn't allow it. Use F-tests and auxiliary regressions (`05_collinearity.md`).
+- Test weeks are scored once, in `07_forecast_accuracy`, after the model is chosen on validation.
+
 ## Grouping trips by hour (implemented in step 3)
 
 - Aggregate in DuckDB to one row per (`PULocationID`, `date_trunc('hour', tpep_pickup_datetime)`), with `pickups = count(*)`.

@@ -12,11 +12,15 @@ python scripts/03_aggregate_zone_hour.py
 python scripts/04_build_model_table.py
 ```
 
+**Modeling phase:** read `docs/modeling/README.md` first. It plans the analysis as one notebook per technique (`notebooks/00_` to `08_`). Start with `notebooks/00_prepare_data.ipynb`, which builds the shared modeling sample from `model_table.parquet`.
+
 ## 2. Where everything is
 | Path | What |
 |---|---|
 | `scripts/01_` to `04_` | Data pipeline: clean weather, clean trips, group by zone × hour, join weather. |
-| `scripts/05_statistical_tests.ipynb` | The analysis. Work here. |
+| `scripts/05_statistical_tests.ipynb` | Original handover notes for the analysis (now split into `notebooks/`). |
+| `docs/modeling/` | Modeling plan: one guide per technique, plus the Word report plan. |
+| `notebooks/00_` to `08_` | Analysis notebooks, one per technique (skeletons for now). |
 | `docs/corrections.md` | Every cleaning cut and why. |
 | `CLAUDE.md` | Full notes on the data, the DST fix and the pipeline. |
 | `scripts/DONT USE_cleaning.ipynb` | Old version of step 1. Ignore it. |
